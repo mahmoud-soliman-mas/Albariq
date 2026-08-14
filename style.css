@@ -2838,3 +2838,28 @@ body,.nav-link,.nav-dropdown-menu li a,.s-title,.s-sub,.svc-desc h2,.svc-desc p,
     right: auto !important;
   }
 }
+
+/* Fix mobile menu clipping: the navbar must not hide its fixed dropdown. */
+@media (max-width: 768px) {
+  #navbar {
+    overflow: visible !important;
+  }
+
+  #navbar .nav-menu {
+    display: flex !important;
+    visibility: visible !important;
+    pointer-events: auto;
+  }
+
+  #navbar .nav-menu:not(.open) {
+    pointer-events: none;
+  }
+
+  #navbar .nav-menu.open {
+    right: 0 !important;
+    left: auto !important;
+    transform: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
