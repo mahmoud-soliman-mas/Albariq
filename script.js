@@ -1783,7 +1783,9 @@ function initNavbar() {
     updateProgressBar();
   });
 
-  ham.addEventListener('click', () => {
+  ham.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     ham.classList.toggle('open');
     menu.classList.toggle('open');
     document.querySelectorAll('.nav-dropdown > .nav-link').forEach(link => {
